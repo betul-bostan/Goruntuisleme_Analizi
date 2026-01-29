@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>İşlemler</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+  <h2>İşlem Seç (tek tık → 3 görsel)</h2>
+
+  <div class="grid-container">
+    <a class="retro-btn" href="/process/grayscale">GRİ</a>
+    <a class="retro-btn" href="/process/threshold">EŞİKLEME</a>
+    <a class="retro-btn" href="/process/negative">NEGATİF</a>
+    <a class="retro-btn" href="/process/flip_h">AYNALAMA (YATAY)</a>
+    <a class="retro-btn" href="/process/flip_v">AYNALAMA (DİKEY)</a>
+
+    <a class="retro-btn" href="/process/mean">MEAN</a>
+    <a class="retro-btn" href="/process/gaussian">GAUSSIAN</a>
+    <a class="retro-btn" href="/process/median">MEDYAN</a>
+
+    <a class="retro-btn" href="/process/sobel">SOBEL</a>
+    <a class="retro-btn" href="/process/prewitt">PREWITT</a>
+    <a class="retro-btn" href="/process/laplacian">LAPLACIAN</a>
+
+    <a class="retro-btn" href="/process/erosion">EROSION</a>
+    <a class="retro-btn" href="/process/dilation">DILATION</a>
+    <a class="retro-btn" href="/process/opening">OPENING</a>
+    <a class="retro-btn" href="/process/closing">CLOSING</a>
+
+    <a class="retro-btn" href="/process/rotate">DÖNDÜR</a>
+    <a class="retro-btn" href="/process/zoom_in">ZOOM IN</a>
+    <a class="retro-btn" href="/process/zoom_out">ZOOM OUT</a>
+
+    <a class="retro-btn" href="/process/perspective">PERSPEKTİF</a>
+    <a class="retro-btn" href="/process/stretch">KONTRAST GERME</a>
+
+    <a class="retro-btn" href="/process/convolution">KONVOLÜSYON</a>
+    <a class="retro-btn" href="/process/correlation">KORELASYON</a>
+
+    <a class="retro-btn" href="/process/brightness">PARLAKLIK</a>
+    <a class="retro-btn" href="/process/contrast">KONTRAST</a>
+    <a class="retro-btn" href="/process/histogram">HİSTOGRAM EŞİTLEME</a>
+    <a class="retro-btn" href="/process/centroid">CENTROID</a>
+
+
+    <a class="retro-btn" href="/">GERİ</a>
+  </div>
+
+</body>
+</html>

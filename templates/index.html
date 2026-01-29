@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Görüntü İşleme Projesi</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <div class="retro-window">
+        <div class="window-header">
+            <span class="circle"></span>
+            <span class="circle"></span>
+            <span class="circle"></span>
+        </div>
+        <div class="window-content" id="drop-area">
+            <p id="placeholder-text">Görsel (BURAYA RESİM GELECEK)</p>
+            <img id="image-preview" class="preview-img" src="" alt="Önizleme">
+        </div>
+    </div>
+
+    <form action="/upload" method="post" enctype="multipart/form-data" class="button-container">
+        <input type="file" name="file" id="file-input" accept="image/*" style="display: none;" required>
+        
+        <button type="button" class="retro-btn" onclick="document.getElementById('file-input').click()">RESİM SEÇ</button>
+
+        <button type="submit" name="engine" value="opencv" class="retro-btn">İŞLEMLERE GEÇ</button>
+        
+    </form>
+
+    <script>
+        // Resim seçilince önizlemeyi gösteren script
+        document.getElementById('file-input').onchange = function (evt) {
+            var tgt = evt.target || window.event.srcElement,
+                files = tgt.files;
+
+            if (FileReader && files && files.length) {
+                var fr = new FileReader();
+                fr.onload = function () {
+                    document.getElementById('image-preview').src = fr.result;
+                    document.getElementById('image-preview').style.display = 'block';
+                    document.getElementById('placeholder-text').style.display = 'none';
+                }
+                fr.readAsDataURL(files[0]);
+            }
+        }
+    </script>
+</body>
+</html>

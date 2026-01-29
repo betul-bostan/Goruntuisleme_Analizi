@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sonuç - {{ action }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body class="result-page">
+
+  <!-- SADECE BAŞLIK -->
+  <h2 class="result-title">İŞLEM: {{ action }}</h2>
+
+  <!-- 3 PENCERE YAN YANA -->
+  <div class="result-grid">
+
+    <div class="result-retro-window">
+      <div class="result-window-header">
+        <span class="circle"></span><span class="circle"></span><span class="circle"></span>
+      </div>
+      <div class="result-window-content">
+        <div class="result-label">ORİJİNAL GÖRÜNTÜ</div>
+        <img class="result-img" src="{{ original }}" alt="original">
+      </div>
+    </div>
+
+    <div class="result-retro-window">
+      <div class="result-window-header">
+        <span class="circle"></span><span class="circle"></span><span class="circle"></span>
+      </div>
+      <div class="result-window-content">
+        <div class="result-label">OPENCV SONUCU</div>
+        <img class="result-img" src="{{ opencv }}" alt="opencv">
+      </div>
+    </div>
+
+    <div class="result-retro-window">
+      <div class="result-window-header">
+        <span class="circle"></span><span class="circle"></span><span class="circle"></span>
+      </div>
+      <div class="result-window-content">
+        <div class="result-label">PYTHON (MANUEL)</div>
+        <img class="result-img" src="{{ python }}" alt="python">
+      </div>
+    </div>
+
+  </div>
+
+  <div class="result-back">
+    <a class="retro-btn" href="/operations">GERİ DÖN</a>
+  </div>
+
+</body>
+</html>
